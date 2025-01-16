@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif; margin: 0;
+    padding: 20px; display: flex;
+    flex-direction: column;
+    min-height: 100vh; background-color: #f5f5f5;
+}
+
+header {
+text-align: center; background-color: #2196f3; color: white;
+padding: 15px;
+}
+
+main {
+flex: 1; display: flex;
+flex-direction: column; align-items: center;
+}
+
+section {
+margin-bottom: 20px; padding: 15px; border-radius: 5px;
+background-color: white;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+width: 50%;
+text-align: center;
+}
+
+h2 {
+margin-bottom: 10px;
+}
+
+label {
+display: block; margin-bottom: 5px;
+}
+
+input, button { padding: 10px;
+border: 1px solid #ccc; border-radius: 3px; margin: 5px;
+}
+
+button:hover { background-color: #eee; cursor: pointer;
+}
+
+#formMessage {
+font-style: italic; color: #666;
+}
+    

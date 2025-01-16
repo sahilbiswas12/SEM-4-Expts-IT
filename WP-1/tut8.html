@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  #quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  #questions-container {
+    margin-bottom: 20px;
+  }
+
+  .question {
+    margin-bottom: 10px;
+  }
+
+  .answer-option {
+    margin-left: 20px;
+    cursor: pointer; /* Add cursor pointer for better UX */
+  }
+
+  #submit-btn {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .correct {
+    color: green;
+  }
+
+  .incorrect {
+    color: red;
+  }
+</style>
+</head>
+<body>
+<div id="quiz-container">
+  <h2>Quiz</h2>
+  <div id="questions-container"></div>
+  <button id="submit-btn">Submit</button>
+</div>
+<div id="result-container"></div>
+
+<script>
+  // Define quiz questions and answers
+  const quizQuestions = [
+    {
+      question: "What is the capital of France?",
+      options: ["Paris", "London", "Berlin", "Madrid"],
+      correctAnswer: "Paris"
+    },
+    {
+      question: "What is the largest mammal?",
+      options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+      correctAnswer: "Blue Whale"
+    },
+    {
+      question: "What is the chemical symbol for water?",
+      options: ["H2O", "CO2", "NaCl", "O2"],
+      correctAnswer: "H2O"
+    },
+    {
+      question: "Who wrote 'To Kill a Mockingbird'?",
+      options: ["Harper Lee", "J.K. Rowling", "Stephen King", "Ernest Hemingway"],
+      correctAnswer: "Harper Lee"
+    },
+    {
+      question: "What year did the Titanic sink?",
+      options: ["1912", "1905", "1930", "1945"],
+      correctAnswer: "1912"
+    }
+  ];
+
+  // Render quiz questions
+  const questionsContainer = document.getElementById("questions-container");
+  quizQuestions.forEach((question, index) => {
+    const questionDiv = document.createElement("div");
+    questionDiv.classList.add("question");
+    questionDiv.innerHTML = `
+      <p>${index + 1}. ${question.question}</p>
+      <ul>
+        ${question.options.map(option => `<li class="answer-option">${option}</li>`).join("")}
+      </ul>
+    `;
+    questionsContainer.appendChild(questionDiv);
+  });
+
+  // Add event listener to handle answer selection
+  const answerOptions = document.querySelectorAll(".answer-option");
+  answerOptions.forEach(option => {
+    option.addEventListener("click", () => {
+      // Remove active class from all options
+      answerOptions.forEach(opt => opt.classList.remove("active"));
+      // Add active class to the selected option
+      option.classList.add("active");
+    });
+  });
+
+  // Calculate score and show result
+  const submitBtn = document.getElementById("submit-btn");
+  submitBtn.addEventListener("click", () => {
+    let score = 0;
+    answerOptions.forEach((option, index) => {
+      const selectedAnswer = option.textContent;
+      if (selectedAnswer === quizQuestions[index].correctAnswer) {
+        score += 20;
+        option.classList.add("correct");
+      } else {
+        option.classList.add("incorrect");
+      }
+    });
+    
+    const resultContainer = document.getElementById("result-container");
+    resultContainer.innerHTML = `
+      <h2>Result</h2>
+      <p>Your score: ${score}%</p>
+    `;
+    
+    if (score > 65) {
+      resultContainer.innerHTML += "<p>Good job!</p>";
+    } else {
+      resultContainer.innerHTML += "<p>Retry!</p>";
+    }
+  });
+</script>
+</body>
+</html>

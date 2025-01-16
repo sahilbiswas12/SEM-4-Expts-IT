@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  #questions-container {
+    margin-bottom: 20px;
+  }
+  
+  .question {
+    margin-bottom: 10px;
+  }
+  
+  .answer-option {
+    margin-left: 20px;
+  }
+  
+  #submit-btn {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .correct {
+    color: green;
+  }
+  
+  .incorrect {
+    color: red;
+  }
+  

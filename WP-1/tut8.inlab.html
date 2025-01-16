@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multiply Numbers</title>
+</head>
+<body>
+
+    <form id="multiplyForm">
+        <label for="firstNumber">First Number:</label>
+        <input type="number" id="firstNumber" required>
+        
+        <label for="secondNumber">Second Number:</label>
+        <input type="number" id="secondNumber" required>
+        
+        <button type="button" onclick="multiplyNumbers()">Multiply</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        
+        const multiply = (num1) => (num2) => num1 * num2;
+
+        
+        function multiplyNumbers() {
+            const firstNumber = parseFloat(document.getElementById('firstNumber').value);
+            const secondNumber = parseFloat(document.getElementById('secondNumber').value);
+
+            if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+                const result = multiply(firstNumber)(secondNumber);
+                document.getElementById('result').innerText = `Result: ${result}`;
+            } else {
+                alert('Please enter valid numbers');
+            }
+        }
+    </script>
+
+</body>
+</html>

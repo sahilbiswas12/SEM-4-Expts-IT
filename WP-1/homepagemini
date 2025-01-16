@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Clothing</title>
+    <link rel="stylesheet" href="stylehomepage.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Bingo Logo">
+            </div>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Search</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Children</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sales-offers">
+        <h2>About the Latest Sales and Offers</h2>
+        <div class="offer-schemes">
+            <div class="offer-scheme">
+                <h3>Special Discount</h3>
+                <p>Get up to 50% off on selected items!</p>
+            </div>
+            <div class="offer-scheme">
+                <h3>Free Shipping</h3>
+                <p>Enjoy free shipping on orders over $50!</p>
+            </div>
+            <div class="offer-scheme">
+                <h3>Buy One, Get One</h3>
+                <p>Buy one, get one free on all accessories!</p>
+            </div>
+            <div class="offer-scheme">
+                <h3>Flash Sale</h3>
+                <p>Limited time offer: up to 70% off on all styles!</p>
+            </div>
+            <div class="offer-scheme">
+                <h3>New Arrivals</h3>
+                <p>Explore our latest collection now!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section men">
+        <h2>Men</h2>
+        <p>Discover the latest trends in men's fashion.</p>
+    </section>
+
+    <section class="category-section women">
+        <h2>Women</h2>
+        <p>Shop the hottest styles for women.</p>
+    </section>
+
+    <section class="category-section children">
+        <h2>Children</h2>
+        <p>Cute and comfortable clothing for your little ones.</p>
+    </section>
+
+    <script src="scripthome.js"></script>
+</body>
+</html>
